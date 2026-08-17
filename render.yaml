@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sutura-scrolls
+    runtime: docker
+    healthCheckPath: /up
+    envVars:
+      - { key: DATABASE_URL, sync: false }
+      - { key: RAILS_MASTER_KEY, sync: false }
+  - type: worker
+    name: sutura-scrolls-worker
+    runtime: docker
+    dockerCommand: bin/rails solid_queue:start
+    envVars:
+      - { key: DATABASE_URL, sync: false }
+      - { key: RAILS_MASTER_KEY, sync: false }

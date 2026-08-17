@@ -1,0 +1,2 @@
+class ImportRun < RunRecord
+end

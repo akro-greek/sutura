@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sutura.akro.dev/schemas/candidate_match.schema.json",
+  "title": "Sutura candidate match",
+  "type": "object",
+  "required": ["source_anchor", "target_work", "target_citation", "algorithm_version", "evidence"],
+  "properties": {
+    "source_anchor": { "type": "string" },
+    "target_work": { "type": "string" },
+    "target_citation": { "type": "string" },
+    "algorithm_version": { "type": "string" },
+    "combined_score": { "type": "number" },
+    "evidence": { "type": "array", "items": { "type": "object", "required": ["channel", "score"] } }
+  }
+}

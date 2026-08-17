@@ -1,0 +1,18 @@
+<div class="mt-4 space-y-3">
+  <% matches.each do |match| %>
+    <div class="rounded-xl border border-white/10 bg-black/20 p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div><p class="text-xs text-amber-300"><%= match.target_corpus_passage.corpus_work.author %> · <%= match.target_corpus_passage.corpus_work.title %> · <%= match.target_corpus_passage.citation %></p><p class="mt-2 font-serif text-lg leading-7 text-stone-200"><%= match.target_corpus_passage.content %></p></div>
+        <span class="rounded-full bg-white/5 px-2 py-1 text-[10px] uppercase text-stone-400"><%= match.status %></span>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <% match.match_evidences.each do |evidence| %><span class="rounded bg-stone-800 px-2 py-1 text-[10px] text-stone-400"><%= evidence.channel %> <%= number_with_precision(evidence.score, precision: 3) %></span><% end %>
+      </div>
+      <div class="mt-4 flex items-center justify-between border-t border-white/5 pt-3">
+        <p class="text-[11px] text-stone-600">Why this surfaced is fully inspectable.</p>
+        <%= link_to "Review evidence →", showcase_review_path(candidate_match_id: match.id), class: "text-xs text-amber-300 hover:text-amber-200" %>
+      </div>
+    </div>
+  <% end %>
+  <% if matches.empty? %><p class="rounded-xl border border-dashed border-white/10 p-5 text-sm text-stone-600">No candidates for this line yet.</p><% end %>
+</div>

@@ -1,0 +1,61 @@
+<% content_for :title, "Sutura — from recovered text to reviewable evidence" %>
+
+<section class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-stone-900 px-6 py-12 md:px-10 md:py-16">
+  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(251,191,36,.16),transparent_38%)]"></div>
+  <div class="relative grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+    <div>
+      <div class="mb-6 flex flex-wrap items-center gap-3">
+        <span class="rounded-full border border-emerald-300/25 bg-emerald-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">Colleague preview</span>
+        <span class="text-xs text-stone-500">No account required</span>
+      </div>
+      <h1 class="max-w-4xl font-serif text-5xl leading-[1.03] text-stone-50 md:text-7xl">What happens after a scroll is read?</h1>
+      <p class="mt-7 max-w-2xl text-lg leading-8 text-stone-300">Sutura turns a recovered transcription into inspectable research: the image, uncertain reading, lexical parallels, human decisions and exportable provenance remain connected.</p>
+      <% if @showcase_scroll %>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <%= link_to "Start the 3-minute tour →", text_line_path(@showcase_scroll.slug, 17, "1-12", tour: 1), class: "rounded-full bg-amber-200 px-6 py-3 text-sm font-semibold text-stone-950 transition hover:bg-amber-100" %>
+          <%= link_to "Open reviewer preview", showcase_review_path, class: "rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-stone-200 transition hover:border-amber-200/50 hover:text-amber-100" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+      <div class="bg-stone-950/85 p-5"><p class="font-serif text-3xl text-amber-200">22</p><p class="mt-2 text-xs leading-5 text-stone-500">published columns in the release</p></div>
+      <div class="bg-stone-950/85 p-5"><p class="font-serif text-3xl text-amber-200"><%= @showcase_scroll&.passages&.where(kind: "column")&.count || 0 %></p><p class="mt-2 text-xs leading-5 text-stone-500">excerpted columns in this preview</p></div>
+      <div class="bg-stone-950/85 p-5"><p class="font-serif text-3xl text-amber-200"><%= @showcase_matches %></p><p class="mt-2 text-xs leading-5 text-stone-500">explainable research leads</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-14">
+  <div class="mb-8 max-w-2xl">
+    <p class="text-xs uppercase tracking-[0.25em] text-stone-500">The Sutura workflow</p>
+    <h2 class="mt-3 font-serif text-4xl">One scholarly chain, three inspectable steps</h2>
+  </div>
+  <div class="grid gap-4 md:grid-cols-3">
+    <article class="rounded-2xl border border-white/10 bg-stone-900/50 p-6"><span class="font-serif text-3xl text-amber-200/60">01</span><h3 class="mt-8 font-serif text-2xl">Read in context</h3><p class="mt-3 text-sm leading-6 text-stone-400">Select a published passage and keep it beside the complete unwrapped surface, translation and uncertainty marks.</p></article>
+    <article class="rounded-2xl border border-white/10 bg-stone-900/50 p-6"><span class="font-serif text-3xl text-amber-200/60">02</span><h3 class="mt-8 font-serif text-2xl">Inspect the match</h3><p class="mt-3 text-sm leading-6 text-stone-400">Compare a candidate parallel and see exactly which forms, lemmas and rankings caused it to surface.</p></article>
+    <article class="rounded-2xl border border-white/10 bg-stone-900/50 p-6"><span class="font-serif text-3xl text-amber-200/60">03</span><h3 class="mt-8 font-serif text-2xl">Make it citable</h3><p class="mt-3 text-sm leading-6 text-stone-400">A reviewer decision becomes append-only provenance and can be exported as EpiDoc, JSON-LD or CSV.</p></article>
+  </div>
+</section>
+
+<section class="border-t border-white/10 py-10">
+  <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div><p class="text-xs uppercase tracking-[0.25em] text-stone-500">Available texts</p><h2 class="mt-2 font-serif text-3xl">Research reader</h2></div>
+    <%= link_to "Inspect the read-only API", "/api/v1/search?q=καθῆκον", class: "text-sm text-amber-300 hover:text-amber-200" %>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2">
+    <% @scrolls.each do |scroll| %>
+      <%= link_to text_path(scroll.slug), class: "group rounded-2xl border border-white/10 bg-stone-900/50 p-6 transition hover:border-amber-300/40 hover:bg-stone-900" do %>
+        <div class="flex items-start justify-between gap-4">
+          <div><p class="text-xs uppercase tracking-[0.2em] text-amber-300"><%= scroll.identifier %></p><h3 class="mt-2 font-serif text-2xl"><%= scroll.title %></h3><p class="mt-3 line-clamp-2 text-sm leading-6 text-stone-400"><%= scroll.description %></p></div>
+          <span class="text-2xl text-stone-600 transition group-hover:translate-x-1 group-hover:text-amber-200">→</span>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-5 text-xs text-stone-500"><span><%= scroll.passages.where(kind: "column").count %> showcase columns</span><span><%= scroll.passages.where(kind: "line").count %> passages</span><span><%= scroll.data_license %></span></div>
+      <% end %>
+    <% end %>
+    <% if @scrolls.empty? %><div class="rounded-2xl border border-dashed border-white/15 p-8 text-stone-400">Run <code class="text-amber-200">bin/setup</code> to load the PHerc. 1667 showcase.</div><% end %>
+  </div>
+</section>
+
+<aside class="mb-8 rounded-2xl border border-sky-300/15 bg-sky-300/5 p-6 text-sm leading-6 text-stone-400">
+  <strong class="text-stone-100">Research boundary.</strong> The image and transcription excerpts come from the published PHerc. 1667 release. Sutura’s links to comparison passages are deliberately labelled as unreviewed candidates: the interface demonstrates how a claim can be tested, not that it has already been established.
+</aside>

@@ -1,0 +1,151 @@
+version: 1
+demo: true
+scroll:
+  slug: pherc-1667
+  identifier: PHerc. 1667
+  title: PHerc. 1667 — interface fixture
+  language: grc
+  dating: "Demo only"
+  description: "Synthetic lines for testing Sutura's reader, provenance and review workflow. Replace this manifest with properly licensed official artifacts."
+  data_license: CC0-1.0
+  metadata:
+    warning: Not an official transcription or image
+artifacts:
+  - key: demo_image
+    kind: image
+    title: Synthetic scroll image
+    local_path: /demo-scroll.svg
+    checksum: demo-synthetic-svg-v1
+    data_license: CC0-1.0
+    citation: "Sutura Scrolls interface fixture, 2026. Not a Vesuvius Challenge artifact."
+    accessed_at: "2026-08-13"
+  - key: demo_transcription
+    kind: transcription
+    title: Synthetic Greek transcription
+    checksum: demo-synthetic-text-v1
+    data_license: CC0-1.0
+    citation: "Sutura Scrolls interface fixture, 2026. Text assembled for software testing."
+passages:
+  - kind: column
+    label: Column 21
+    anchor: column-21
+    position: 21
+    children:
+      - kind: line
+        label: Line 4
+        anchor: column-21-line-4
+        position: 4
+        reading:
+          artifact: demo_transcription
+          diplomatic_text: "περὶ φύσεως καὶ τοῦ κατὰ φύσιν βίου"
+          unicode_text: "περὶ φύσεως καὶ τοῦ κατὰ φύσιν βίου"
+          translation: "On nature and the life according to nature."
+          editorial_status: demo
+          epidoc_fragment: '<l n="4">περὶ φύσεως καὶ τοῦ κατὰ φύσιν βίου</l>'
+          tokens:
+            - surface: περὶ
+              lemmas: [{ lemma: περί, source: demo-lexicon, confidence: 1.0 }]
+            - surface: φύσεως
+              lemmas: [{ lemma: φύσις, source: demo-lexicon, confidence: 0.99 }]
+            - surface: καὶ
+              lemmas: [{ lemma: καί, source: demo-lexicon, confidence: 1.0 }]
+            - surface: τοῦ
+              lemmas: [{ lemma: ὁ, source: demo-lexicon, confidence: 0.99 }]
+            - surface: κατὰ
+              lemmas: [{ lemma: κατά, source: demo-lexicon, confidence: 1.0 }]
+            - surface: φύσιν
+              lemmas: [{ lemma: φύσις, source: demo-lexicon, confidence: 0.99 }]
+            - surface: βίου
+              lemmas: [{ lemma: βίος, source: demo-lexicon, confidence: 0.98 }]
+        image_region:
+          artifact: demo_image
+          shape: rectangle
+          geometry: { x: 265, y: 300, width: 990, height: 88 }
+      - kind: line
+        label: Line 5
+        anchor: column-21-line-5
+        position: 5
+        reading:
+          artifact: demo_transcription
+          diplomatic_text: "οὐδὲν ἄλογον ἐν τῷ κόσμῳ"
+          unicode_text: "οὐδὲν ἄλογον ἐν τῷ κόσμῳ"
+          translation: "Nothing in the cosmos is without reason."
+          editorial_status: demo
+        image_region:
+          artifact: demo_image
+          shape: rectangle
+          geometry: { x: 285, y: 414, width: 930, height: 84 }
+      - kind: line
+        label: Line 6
+        anchor: column-21-line-6
+        position: 6
+        reading:
+          artifact: demo_transcription
+          diplomatic_text: "[τὸ] δὲ πᾶν λόγῳ διοικεῖται"
+          unicode_text: "τὸ δὲ πᾶν λόγῳ διοικεῖται"
+          translation: "The whole is governed by reason."
+          editorial_status: demo
+        image_region:
+          artifact: demo_image
+          shape: rectangle
+          geometry: { x: 245, y: 525, width: 1040, height: 88 }
+  - kind: column
+    label: Column 22
+    anchor: column-22
+    position: 22
+    children:
+      - kind: line
+        label: Line 1
+        anchor: column-22-line-1
+        position: 1
+        reading:
+          artifact: demo_transcription
+          diplomatic_text: "ἡ δὲ ψυχὴ σῶμά ἐστι λεπτόν"
+          unicode_text: "ἡ δὲ ψυχὴ σῶμά ἐστι λεπτόν"
+          translation: "The soul is a subtle body."
+          editorial_status: demo
+        image_region:
+          artifact: demo_image
+          shape: rectangle
+          geometry: { x: 270, y: 643, width: 960, height: 82 }
+corpus:
+  - work:
+      slug: demo-stoicorum
+      title: Fragmenta Stoicorum (demo)
+      author: Test corpus
+      language: grc
+      metadata: { license: CC0-1.0, warning: Synthetic test passage }
+    passages:
+      - citation: fr. 1
+        content: "κατὰ φύσιν ζῆν καὶ τῷ κοινῷ λόγῳ ἕπεσθαι"
+        lemma_sequence: "κατά φύσις ζάω καί ὁ κοινός λόγος ἕπομαι"
+      - citation: fr. 2
+        content: "ὁ κόσμος λόγῳ καὶ φύσει διοικεῖται"
+        lemma_sequence: "ὁ κόσμος λόγος καί φύσις διοικέω"
+candidate_matches:
+  - source_anchor: column-21-line-4
+    target_work: demo-stoicorum
+    target_citation: fr. 1
+    algorithm_version: demo-rrf-v1
+    combined_score: 0.03279
+    channel_ranks: { exact: 2, lemma: 1 }
+    evidence:
+      - channel: exact
+        score: 0.72
+        details: { matched_forms: [κατὰ, φύσιν] }
+      - channel: lemma
+        score: 0.91
+        details: { matched_lemmas: [κατά, φύσις], rare_term_weight: 1.4 }
+  - source_anchor: column-21-line-6
+    target_work: demo-stoicorum
+    target_citation: fr. 2
+    algorithm_version: demo-rrf-v1
+    combined_score: 0.03175
+    channel_ranks: { exact: 1, lemma: 2 }
+    evidence:
+      - channel: exact
+        score: 0.68
+        details: { matched_forms: [λόγῳ, διοικεῖται] }
+      - channel: lemma
+        score: 0.86
+        details: { matched_lemmas: [λόγος, διοικέω] }

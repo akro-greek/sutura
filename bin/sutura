@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+require_relative "../config/environment"
+require "fileutils"
+
+command, *arguments = ARGV
+
+case command
+when "import"
+  path = arguments.first or abort "Usage: bin/sutura import manifest.yml"
+  run = Imports::ManifestImporter.new(path).call
+  puts JSON.pretty_generate(run.stats)
+when "import_epidoc"
+  path = arguments.first or abort "Usage: bin/sutura import_epidoc file.xml --scroll=pherc-1667"
+  scroll_slug = arguments.find { |argument| argument.start_with?("--scroll=") }&.split("=", 2)&.last || "pherc-1667"
+  Imports::EpidocImporter.new(path, scroll_slug:).call
+  puts "Imported #{path} into #{scroll_slug}"
+when "import_jsonl"
+  path = arguments.first or abort "Usage: bin/sutura import_jsonl file.jsonl --scroll=pherc-1667"
+  scroll_slug = arguments.find { |argument| argument.start_with?("--scroll=") }&.split("=", 2)&.last || "pherc-1667"
+  Imports::JsonlImporter.new(path, scroll_slug:).call
+  puts "Imported #{path} into #{scroll_slug}"
+when "index"
+  run = IndexRun.create!(status: :running, source: "corpus", version: ENV.fetch("SUTURA_EMBEDDING_MODEL", "all-MiniLM-L6-v2"), started_at: Time.current)
+  CorpusPassage.find_each { |passage| EmbedCorpusPassageJob.perform_later(passage.id) }
+  run.update!(status: :completed, finished_at: Time.current, stats: {enqueued: CorpusPassage.count})
+  puts "Enqueued #{CorpusPassage.count} corpus passages"
+when "export"
+  slug = arguments.first or abort "Usage: bin/sutura export pherc-1667"
+  scroll = Scroll.find_by!(slug:)
+  output = Rails.root.join("tmp/exports", slug)
+  FileUtils.mkdir_p(output)
+  File.write(output.join("epidoc.xml"), Exports::Epidoc.new(scroll).call)
+  File.write(output.join("graph.jsonld"), Exports::JsonLd.new(scroll).call)
+  File.write(output.join("matches.csv"), Exports::MatchesCsv.new(scroll).call)
+  puts output
+else
+  abort <<~USAGE
+    Sutura Scrolls CLI
+      bin/sutura import manifest.yml
+      bin/sutura import_epidoc file.xml --scroll=pherc-1667
+      bin/sutura import_jsonl file.jsonl --scroll=pherc-1667
+      bin/sutura index
+      bin/sutura export pherc-1667
+  USAGE
+end

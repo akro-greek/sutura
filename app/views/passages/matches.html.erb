@@ -1,0 +1,4 @@
+<% content_for :title, "Matches for #{@selected_line.label}" %>
+<h1 class="font-serif text-4xl"><%= @scroll.identifier %> · <%= @column.label %> · <%= @selected_line.label %></h1>
+<p class="mt-4 font-serif text-2xl text-stone-300"><%= @selected_line.reading&.diplomatic_text %></p>
+<%= render "candidate_matches/list", matches: @matches %>

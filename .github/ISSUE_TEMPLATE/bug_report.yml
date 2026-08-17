@@ -1,0 +1,16 @@
+name: Bug report
+description: Report a reproducible software defect
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes: { label: What happened?, description: Include the affected stable URL or import run. }
+    validations: { required: true }
+  - type: textarea
+    id: reproduction
+    attributes: { label: Reproduction, description: List the smallest set of steps and fixture data. }
+    validations: { required: true }
+  - type: textarea
+    id: provenance
+    attributes: { label: Source and license context, description: Do not attach restricted source data. }

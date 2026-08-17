@@ -1,0 +1,7 @@
+module Api
+  module V1
+    class BaseController < ActionController::API
+      rescue_from ActiveRecord::RecordNotFound, with: -> { render json: { error: "not_found" }, status: :not_found }
+    end
+  end
+end

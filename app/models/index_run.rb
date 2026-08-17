@@ -1,0 +1,2 @@
+class IndexRun < RunRecord
+end

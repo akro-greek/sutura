@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title description">
+  <title id="title">Synthetic scroll image fixture</title>
+  <description id="description">A clearly labelled artificial papyrus-like field used only to test the Sutura interface.</description>
+  <defs>
+    <filter id="noise"><feTurbulence baseFrequency=".55" numOctaves="3" seed="7" type="fractalNoise" result="n"/><feBlend in="SourceGraphic" in2="n" mode="multiply"/></filter>
+    <linearGradient id="paper" x1="0" x2="1"><stop stop-color="#553a20"/><stop offset=".5" stop-color="#9c7445"/><stop offset="1" stop-color="#4b321d"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="#17120e"/>
+  <path d="M160 90 C310 45 470 85 640 67 C870 42 1055 96 1425 61 L1380 914 C1110 943 890 910 650 938 C465 959 298 908 177 935 Z" fill="url(#paper)" filter="url(#noise)" opacity=".88"/>
+  <g stroke="#d7af73" stroke-width="3" opacity=".18"><path d="M190 190H1390"/><path d="M195 250H1385"/><path d="M200 310H1380"/><path d="M204 370H1375"/><path d="M208 430H1370"/><path d="M210 490H1365"/><path d="M214 550H1360"/><path d="M216 610H1355"/><path d="M220 670H1350"/><path d="M225 730H1345"/></g>
+  <g fill="#1b120a" font-family="Georgia, serif" font-size="43" opacity=".82">
+    <text x="270" y="360">ΠΕΡΙ ΦΥΣΕΩΣ ΚΑΙ ΤΟΥ ΚΑΤΑ ΦΥΣΙΝ ΒΙΟΥ</text>
+    <text x="290" y="472">ΟΥΔΕΝ ΑΛΟΓΟΝ ΕΝ ΤΩΙ ΚΟΣΜΩΙ</text>
+    <text x="250" y="584">ΤΟ ΔΕ ΠΑΝ ΛΟΓΩΙ ΔΙΟΙΚΕΙΤΑΙ</text>
+    <text x="275" y="699">Η ΔΕ ΨΥΧΗ ΣΩΜΑ ΕΣΤΙ ΛΕΠΤΟΝ</text>
+  </g>
+  <g fill="#f8e7c7"><rect x="32" y="28" width="355" height="56" rx="28" fill="#17120e" opacity=".9"/><text x="61" y="65" font-family="system-ui, sans-serif" font-size="22" letter-spacing="2">SYNTHETIC DEMO · NOT SOURCE DATA</text></g>
+</svg>

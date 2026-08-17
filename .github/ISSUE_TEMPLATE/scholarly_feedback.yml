@@ -1,0 +1,13 @@
+name: Scholarly feedback
+description: Suggest terminology, transcription, geometry, evidence, or export improvements
+title: "[Scholarly]: "
+labels: [scholarly-feedback]
+body:
+  - type: textarea
+    id: context
+    attributes: { label: Context, description: Identify the passage and disciplinary convention. }
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes: { label: Proposed change, description: Explain the desired behavior and supporting standard or citation. }
+    validations: { required: true }

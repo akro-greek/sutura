@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sutura.akro.dev/schemas/passage.schema.json",
+  "title": "Sutura passage",
+  "type": "object",
+  "required": ["kind", "label", "anchor"],
+  "properties": {
+    "kind": { "enum": ["scroll", "column", "line", "window"] },
+    "label": { "type": "string" },
+    "anchor": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "position": { "type": "integer" },
+    "reading": { "$ref": "reading.schema.json" },
+    "children": { "type": "array", "items": { "$ref": "passage.schema.json" } }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Sutura Scrolls" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Sutura Scrolls">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="min-h-screen bg-stone-950 text-stone-100 antialiased">
+    <header class="border-b border-white/10 bg-stone-950/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-4">
+        <%= link_to root_path, class: "flex items-baseline gap-3" do %>
+          <span class="font-serif text-2xl tracking-wide text-amber-200">Sutura</span>
+          <span class="hidden text-xs uppercase tracking-[0.24em] text-stone-500 sm:inline">Scrolls by AKRO</span>
+        <% end %>
+        <div class="flex items-center gap-5 text-sm text-stone-400">
+          <% if user_signed_in? %>
+            <%= link_to "Reviewer inbox", reviewer_candidate_matches_path, class: "hover:text-amber-200" %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "hover:text-white" %>
+          <% else %>
+            <%= link_to "Reviewer sign in", new_user_session_path, class: "hover:text-white" %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <% if notice || alert %>
+      <div class="mx-auto mt-4 max-w-4xl rounded-xl border border-amber-200/20 bg-amber-100/10 px-4 py-3 text-sm text-amber-100"><%= notice || alert %></div>
+    <% end %>
+    <main class="mx-auto max-w-[1600px] px-5 py-8">
+      <%= yield %>
+    </main>
+    <footer class="border-t border-white/10 px-5 py-8 text-center text-xs text-stone-500">
+      Open-source textual reconstruction infrastructure by AKRO · Code Apache-2.0 · Data licenses are source-specific
+    </footer>
+  </body>
+</html>

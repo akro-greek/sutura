@@ -1,0 +1,255 @@
+version: 2026-06-27-showcase.1
+demo: true
+scroll:
+  slug: pherc-1667
+  identifier: PHerc. 1667
+  title: PHerc. 1667 — preserved final columns
+  language: grc
+  dating: "Likely 2nd century BCE"
+  description: "A guided Sutura showcase built from six published transcription excerpts and the official complete-surface rendering. The work is an anonymous ethical treatise with strong Stoic context."
+  data_license: CC-BY-NC-4.0
+  metadata:
+    showcase: true
+    release_date: "2026-06-25"
+    scope: "Six excerpted columns (17–22) from the published twenty-two-column transcription"
+    scholarly_status: "Published transcription; Sutura candidate links remain unreviewed demonstrations"
+    source_page: "https://scrollprize.org/firstscroll"
+artifacts:
+  - key: complete_surface
+    kind: image
+    title: Complete virtually unwrapped writing surface
+    previous_titles: [Synthetic scroll image]
+    source_url: https://scrollprize.org/img/firstscroll/banner-full.webp
+    local_path:
+    data_license: CC-BY-NC-4.0
+    citation: "Vesuvius Challenge (2026), complete writing surface of PHerc. 1667, virtually unwrapped."
+    accessed_at: "2026-08-17"
+    metadata:
+      rights_url: https://creativecommons.org/licenses/by-nc/4.0/
+      source_page: https://scrollprize.org/firstscroll
+      geometry_note: "Showcase regions are approximate column bands, not source-published line polygons."
+  - key: published_transcription
+    kind: transcription
+    title: Published column-by-column transcription and translation
+    previous_titles: [Synthetic Greek transcription]
+    source_url: https://arxiv.org/html/2606.29085v1#Sx2.SSx10
+    data_license: CC-BY-NC-4.0
+    citation: "Angelotti et al. (2026), Complete virtual unwrapping and reading of a rolled Herculaneum papyrus, arXiv:2606.29085v1, Methods: complete PHerc. 1667 transcription and translation."
+    accessed_at: "2026-08-17"
+    metadata:
+      arxiv_id: "2606.29085v1"
+      editorial_note: "Orthography and uncertainty marks follow the published transcription; excerpt grouping is by Sutura."
+passages:
+  - kind: column
+    label: Column 17
+    anchor: column-17
+    position: 17
+    metadata: { showcase_excerpt: true }
+    children:
+      - kind: line
+        label: Lines 1–12
+        anchor: column-17-line-1-12
+        position: 1
+        metadata: { citation: "Col. 17, ll. 1–12", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: "[  ̣  ̣  ̣]  ̣οι ζητήσομέν τι, ἀλλ’ οὐχ ἕξομεν ἐὰν τρόπον τινὰ ἑαυτῶν ἀποστῶμεν καὶ τῆς φύσεως ἡμῶν, ἔτι τε ὃν τρόπον ἂν ῥηθείησαν αἱ λοιπαὶ τέχναι κατά τι μὲν τέλειαι εἶναι, κατά τι δὲ ἐνλείπειν, τῆς φρονήσεως δι-"
+          unicode_text: "ζητήσομέν τι ἀλλ οὐχ ἕξομεν ἐὰν τρόπον τινὰ ἑαυτῶν ἀποστῶμεν καὶ τῆς φύσεως ἡμῶν αἱ λοιπαὶ τέχναι κατά τι μὲν τέλειαι εἶναι κατά τι δὲ ἐνλείπειν τῆς φρονήσεως"
+          translation: "…we will inquire into something, but we will not grasp it if we somehow depart from ourselves and our nature; other arts may be complete in one respect and deficient in another…"
+          editorial_status: published
+          epidoc_fragment: '<ab n="17"><lb n="1"/>[... ]οι ζητήσομέν τι, ἀλλ’ οὐχ ἕξομεν <lb n="3"/>ἐὰν τρόπον τινὰ ἑαυτῶν ἀποστῶμεν <lb n="5"/>καὶ τῆς φύσεως ἡμῶν</ab>'
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 72.0, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+  - kind: column
+    label: Column 18
+    anchor: column-18
+    position: 18
+    metadata: { showcase_excerpt: true }
+    children:
+      - kind: line
+        label: Lines 1–12
+        anchor: column-18-line-1-12
+        position: 1
+        metadata: { citation: "Col. 18, ll. 1–12", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: "περὶ ἐκείνην τὴν φρόνησιν οὖσαν, καὶ περὶ αὐτὴν εἶναι. τοῦτον δὲ περὶ τὰς βαναύσους ὄντα τέχνας ἀπολελεῖφθαι πολὺ τοῦ τοιούτου καὶ ὥσπερ χωλὸν τὸ τεχνικὸν ἔχειν καὶ ἐνλελειμμένον τοιοῦτό τι μοι δοκεῖ"
+          unicode_text: "περὶ ἐκείνην τὴν φρόνησιν οὖσαν καὶ περὶ αὐτὴν εἶναι τοῦτον δὲ περὶ τὰς βαναύσους ὄντα τέχνας ἀπολελεῖφθαι πολὺ τοῦ τοιούτου"
+          translation: "…practical wisdom concerning that is also concerned with this; what relates to the mechanical arts seems far removed from such a conception and technically incomplete…"
+          editorial_status: published
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 76.4, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+  - kind: column
+    label: Column 19
+    anchor: column-19
+    position: 19
+    metadata: { showcase_excerpt: true }
+    children:
+      - kind: line
+        label: Lines 1–12
+        anchor: column-19-line-1-12
+        position: 1
+        metadata: { citation: "Col. 19, ll. 1–12", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: "[  ̣  ̣  ̣  ̣]  ̣  ̣[  ̣  ̣  ̣  ̣  ̣  ̣  ̣  ̣]  ̣[  ̣]  ̣δεῖσθαι μηδεμίας. ἐκπονηθέντων μέντοι ἡμῶν διὰ τῆς ζητήσεως ἢ τῆς μαθήσεως, κατ’ οὐθὲν ἔτι λειφθησόμεθα αὐτῶν ὁμοίως τέλεα τὰ καθήκοντ’ αὐτοῖς ποιοῦντες καὶ τὴν αὐτὴν ἔχοντες αὐτοῖς φρόνησιν"
+          unicode_text: "δεῖσθαι μηδεμίας ἐκπονηθέντων μέντοι ἡμῶν διὰ τῆς ζητήσεως ἢ τῆς μαθήσεως κατ οὐθὲν ἔτι λειφθησόμεθα αὐτῶν τέλεα τὰ καθήκοντα ποιοῦντες καὶ τὴν αὐτὴν φρόνησιν"
+          translation: "…having trained ourselves through inquiry or learning, we will no longer fall short of them, performing the appropriate actions and possessing the same practical wisdom…"
+          editorial_status: published
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 80.8, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+  - kind: column
+    label: Column 20
+    anchor: column-20
+    position: 20
+    metadata: { showcase_excerpt: true }
+    children:
+      - kind: line
+        label: Lines 1–11
+        anchor: column-20-line-1-11
+        position: 1
+        metadata: { citation: "Col. 20, ll. 1–11", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: " ̣[  ̣  ̣  ̣  ̣]  ̣  ̣  ̣  ̣  ̣  ̣  ̣  ̣ ευ  ̣  ̣  ̣  ̣ν τὸ συντυγχάνειν. τοιούτων δὲ τῶν ἀγαθῶν ὄντων ἡμῖν, καὶ ἐκ τῶν ἐναντίων τῶν κακῶν οὔτε ἀγαθόν τι ἔσται – οὐ καλὸν δέ – οὔτε κακόν – οὐκ αἰσχρόν – οὔτε τὸ εὐδαιμονεῖν"
+          unicode_text: "τὸ συντυγχάνειν τοιούτων δὲ τῶν ἀγαθῶν ὄντων ἡμῖν καὶ ἐκ τῶν ἐναντίων τῶν κακῶν οὔτε ἀγαθόν τι ἔσται οὐ καλὸν δέ οὔτε κακόν οὐκ αἰσχρόν οὔτε τὸ εὐδαιμονεῖν"
+          translation: "…given that such things are goods for us, among their opposites there will be neither something good—let alone fine—nor something bad—let alone shameful—nor happiness…"
+          editorial_status: published
+          tokens:
+            - { surface: ἀγαθῶν, lemmas: [{ lemma: ἀγαθός, source: curated-showcase, confidence: 1.0 }] }
+            - { surface: κακῶν, lemmas: [{ lemma: κακός, source: curated-showcase, confidence: 1.0 }] }
+            - { surface: καλὸν, lemmas: [{ lemma: καλός, source: curated-showcase, confidence: 1.0 }] }
+            - { surface: αἰσχρόν, lemmas: [{ lemma: αἰσχρός, source: curated-showcase, confidence: 1.0 }] }
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 85.2, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+  - kind: column
+    label: Column 21
+    anchor: column-21
+    position: 21
+    metadata: { showcase_excerpt: true }
+    children:
+      - kind: line
+        label: Lines 1–3
+        anchor: column-21-line-4
+        position: 1
+        metadata: { citation: "Col. 21, ll. 1–3", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: " ̣ [  ̣  ̣  ̣  ̣]  ̣  ̣  ̣[  ̣ φ]ρονοῦντες μέγα καὶ σεμνυνόμενοι καὶ"
+          unicode_text: "φρονοῦντες μέγα καὶ σεμνυνόμενοι καὶ"
+          translation: "…thinking highly, and showing themselves as worthy of reverence…"
+          editorial_status: published
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 89.6, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+      - kind: line
+        label: Lines 6–8
+        anchor: column-21-line-5
+        position: 6
+        metadata: { citation: "Col. 21, ll. 6–8", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: "ν̣οι  ̣  ̣  ̣  ̣α̣ιτε ἀπὸ τοῦ οὔτε̣  ̣  ̣ἐπαινεῖν τ  ̣ν  ̣  ̣  ̣  ̣  ̣"
+          unicode_text: "ἀπὸ τοῦ οὔτε ἐπαινεῖν"
+          translation: "…from neither praising…"
+          editorial_status: published
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 89.6, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+      - kind: line
+        label: Lines 10–11
+        anchor: column-21-line-6
+        position: 10
+        metadata: { citation: "Col. 21, ll. 10–11", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: "μ̣ένου οἷον κατὰ τὰ̣ς̣ ὑμνήσεις ευτ̣ονι  ̣  ̣"
+          unicode_text: "οἷον κατὰ τὰς ὑμνήσεις"
+          translation: "…as, for example, in eulogies…"
+          editorial_status: published
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 89.6, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+  - kind: column
+    label: Column 22
+    anchor: column-22
+    position: 22
+    metadata: { showcase_excerpt: true }
+    children:
+      - kind: line
+        label: Lines 1–3
+        anchor: column-22-line-1
+        position: 1
+        metadata: { citation: "Col. 22, ll. 1–3", geometry_status: approximate_column_band }
+        reading:
+          artifact: published_transcription
+          diplomatic_text: "ν̣ων ε̣ἰ̣σέτι συνα̣  ̣  ̣  ̣  ̣[  ̣  ̣]  ̣(  ̣) Ἀριστοκ̣ρέω̣ν τὰ̣ς̣  ̣[  ̣]  ̣  ̣  ̣(  ̣) τ̣οῖς ἐ̣χομένοις̣  ̣  ̣"
+          unicode_text: "εἰσέτι Ἀριστοκρέων τοῖς ἐχομένοις"
+          translation: "…still… Aristocreon… to the things that follow / those who possess…"
+          editorial_status: published
+        image_region:
+          artifact: complete_surface
+          shape: rectangle
+          geometry: { x: 94.0, y: 8.0, width: 4.4, height: 84.0, unit: percent, confidence: approximate }
+corpus:
+  - work:
+      slug: diogenes-laertius-stoics
+      title: Lives of Eminent Philosophers, Book VII
+      author: Diogenes Laertius
+      language: grc
+      metadata:
+        license: Public domain ancient text
+        source_url: https://el.wikisource.org/wiki/Βίοι_φιλοσόφων/Ζ
+        role: "Small curated comparison corpus for the Sutura showcase"
+    passages:
+      - citation: VII.87
+        content: "διόπερ πρῶτος ὁ Ζήνων ἐν τῷ Περὶ ἀνθρώπου φύσεως τέλος εἶπε τὸ ὁμολογουμένως τῇ φύσει ζῆν, ὅπερ ἐστὶ κατ’ ἀρετὴν ζῆν· ἄγει γὰρ πρὸς ταύτην ἡμᾶς ἡ φύσις"
+        lemma_sequence: "Ζήνων ἄνθρωπος φύσις τέλος λέγω ὁμολογουμένως φύσις ζάω ἀρετή ζάω ἄγω φύσις"
+        metadata: { scholarly_status: comparison_candidate, source_url: "https://el.wikisource.org/wiki/Βίοι_φιλοσόφων/Ζ" }
+      - citation: VII.94
+        content: "ἀγαθὸν μὲν τὸ συμφέρον ἢ οὐχ ἕτερον συμφέροντος· κακὸν δὲ τὸ βλαβερὸν ἢ οὐχ ἕτερον βλαβεροῦ"
+        lemma_sequence: "ἀγαθός συμφέρω ἕτερος συμφέρω κακός βλαβερός ἕτερος βλαβερός"
+        metadata: { scholarly_status: comparison_candidate, source_url: "https://el.wikisource.org/wiki/Βίοι_φιλοσόφων/Ζ" }
+      - citation: VII.107
+        content: "τὸ δὲ καθῆκον φασὶν εἶναι ὃ πραχθὲν εὔλογον ἴσχει ἀπολογισμόν"
+        lemma_sequence: "καθῆκον φημί εἰμί πράσσω εὔλογος ἴσχω ἀπολογισμός"
+        metadata: { scholarly_status: comparison_candidate, source_url: "https://el.wikisource.org/wiki/Βίοι_φιλοσόφων/Ζ" }
+candidate_matches:
+  - source_anchor: column-17-line-1-12
+    target_work: diogenes-laertius-stoics
+    target_citation: VII.87
+    algorithm_version: showcase-rrf-v1
+    combined_score: 0.03175
+    channel_ranks: { exact: 2, lemma: 1 }
+    evidence:
+      - { channel: exact, score: 0.61, details: { matched_forms: [φύσεως, φύσει], note: "Inflected-form neighborhood after normalization" } }
+      - { channel: lemma, score: 0.89, details: { matched_lemmas: [φύσις], context: "human nature and ethical completion" } }
+  - source_anchor: column-19-line-1-12
+    target_work: diogenes-laertius-stoics
+    target_citation: VII.107
+    algorithm_version: showcase-rrf-v1
+    combined_score: 0.03252
+    channel_ranks: { exact: 1, lemma: 1 }
+    evidence:
+      - { channel: exact, score: 0.83, details: { matched_forms: [καθήκοντα, καθῆκον], note: "Same Stoic technical term in different inflection" } }
+      - { channel: lemma, score: 0.94, details: { matched_lemmas: [καθῆκον], rare_term_weight: 1.8 } }
+  - source_anchor: column-20-line-1-11
+    target_work: diogenes-laertius-stoics
+    target_citation: VII.94
+    algorithm_version: showcase-rrf-v1
+    combined_score: 0.03279
+    channel_ranks: { exact: 1, lemma: 1 }
+    evidence:
+      - { channel: exact, score: 0.78, details: { matched_forms: [ἀγαθόν, κακόν], note: "Opposed value vocabulary" } }
+      - { channel: lemma, score: 0.92, details: { matched_lemmas: [ἀγαθός, κακός], rare_term_weight: 1.4 } }

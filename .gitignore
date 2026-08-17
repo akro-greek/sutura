@@ -1,0 +1,14 @@
+/.bundle
+/.env
+/config/master.key
+/log/*
+/storage/*
+/tmp/*
+/vendor/bundle
+/public/assets
+/app/assets/builds/*
+!/app/assets/builds/.keep
+!/log/.keep
+!/storage/.keep
+!/tmp/.keep
+!/tmp/pids/.keep

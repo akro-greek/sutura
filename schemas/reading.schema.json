@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sutura.akro.dev/schemas/reading.schema.json",
+  "title": "Sutura reading",
+  "$defs": {
+    "scroll": {
+      "type": "object",
+      "required": ["slug", "identifier", "title"],
+      "properties": { "slug": { "type": "string" }, "identifier": { "type": "string" }, "title": { "type": "string" }, "language": { "type": "string" } }
+    }
+  },
+  "type": "object",
+  "required": ["diplomatic_text"],
+  "properties": {
+    "diplomatic_text": { "type": "string" },
+    "epidoc_fragment": { "type": ["string", "null"] },
+    "unicode_text": { "type": "string" },
+    "translation": { "type": ["string", "null"] },
+    "editorial_status": { "type": "string" }
+  }
+}

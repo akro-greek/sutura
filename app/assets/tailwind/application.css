@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+@layer base {
+  ::selection { background: rgb(253 230 138 / 0.35); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+}
+
+.sutura-region {
+  border: 2px solid rgb(253 230 138);
+  background: rgb(253 230 138 / 0.12);
+  box-shadow: 0 0 0 9999px rgb(0 0 0 / 0.15);
+}

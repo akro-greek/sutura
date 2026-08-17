@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sutura.akro.dev/schemas/manifest.schema.json",
+  "title": "Sutura import manifest",
+  "type": "object",
+  "required": ["version", "scroll", "artifacts", "passages"],
+  "properties": {
+    "version": { "type": ["string", "integer"] },
+    "demo": { "type": "boolean" },
+    "scroll": { "$ref": "reading.schema.json#/$defs/scroll" },
+    "artifacts": { "type": "array", "items": { "type": "object", "required": ["key", "kind", "title", "data_license", "citation"] } },
+    "passages": { "type": "array", "items": { "$ref": "passage.schema.json" } }
+  },
+  "additionalProperties": true
+}

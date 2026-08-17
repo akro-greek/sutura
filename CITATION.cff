@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: Sutura Scrolls
+message: If you use Sutura Scrolls, please cite the software and the source data listed in its manifests.
+type: software
+authors:
+  - name: AKRO team
+license: Apache-2.0
+repository-code: https://github.com/AKRO/sutura-scrolls
+abstract: Open-source textual reconstruction infrastructure for connecting scroll images, readings, corpus parallels, review decisions, and scholarly exports.
+
